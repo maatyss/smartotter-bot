@@ -1,4 +1,4 @@
-module.exports = async (interaction) => {
+module.exports = async (client, interaction) => {
   await interaction.deferReply({ephemeral: true})
   
   const role = interaction.guild.roles.cache.get(interaction.customId)
