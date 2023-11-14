@@ -7,17 +7,9 @@ const client = new Client({
                           });
 
 client.on('ready', (c) => {
+  client.user.setActivity(`Self-Coding`)
   console.log(`${c.user.tag} is online.🌍`);
 });
 
-client.on('messageCreate', (message) => {
-  if (message.author.bot) {
-    return;
-  }
-  
-  if (message.content === '!ping') {
-    message.reply('pong');
-  }
-});
 
 client.login(process.env.TOKEN);
