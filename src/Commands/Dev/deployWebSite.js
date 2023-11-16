@@ -1,6 +1,8 @@
 require('dotenv').config()
 const {PermissionFlagsBits, ApplicationCommandOptionType} = require('discord.js')
 const axios = require('axios')
+const sendMessage = require('../../Log/sendMessage')
+
 
 module.exports = {
   name: 'deploy', description: 'Lancer le déploiement d\'un site web', devOnly: true, // testOnly, Boolean,
@@ -34,7 +36,10 @@ module.exports = {
         headers: {
           Authorization: `Bearer ${process.env.BOXYDEV_TOKEN}`,
         },
-      }).then(interaction.editReply(`🛰 **${siteToDeploy}** déployé ! \n🆔 : *${siteID}* \n🌍 : https://${siteToDeploy}`)).catch(error => console.log(error))
+      }).then(interaction.editReply(`🛰 **${siteToDeploy}** déployé ! \n🆔 : *${siteID}* \n🌍 : https://${siteToDeploy}`)).catch(error => {
+        console.log(error)
+        sendMessage(client, error)
+      })
       return
     }
     
@@ -64,9 +69,15 @@ module.exports = {
             }
           })
           
-        }).catch(error => console.log(error))
+        }).catch(error => {
+          console.log(error)
+          sendMessage(client, error)
+        })
       }
-    }).catch(error => console.log(error))
+    }).catch(error => {
+      console.log(error)
+      sendMessage(client, error)
+    })
     
     
   },
