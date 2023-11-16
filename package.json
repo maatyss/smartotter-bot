@@ -1,13 +1,13 @@
 {
   "name": "smartotter-bot",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Discord bot for Maatyss Discord",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Discord bot", "bot", "smartotter"],
+  "author": "Maatyss",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.2",
