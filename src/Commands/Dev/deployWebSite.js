@@ -14,6 +14,7 @@ module.exports = {
   }, {
     name: 'id',
     description: 'A précisez pour ne pas surchager l\'api',
+    required: false,
     type: ApplicationCommandOptionType.Integer,
   }],
   permissionsRequired: [PermissionFlagsBits.Administrator], botPermissions: [PermissionFlagsBits.Administrator],
