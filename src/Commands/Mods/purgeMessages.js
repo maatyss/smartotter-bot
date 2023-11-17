@@ -4,7 +4,7 @@ module.exports = {
   
   name: 'purge',
   description: 'Supprime les 10 derniers messages par défaut',
-  devOnly: true,
+  // devOnly: true,
   // testOnly, Boolean,
   options: [{
     name: 'nombre',
