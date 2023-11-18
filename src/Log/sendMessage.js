@@ -3,7 +3,7 @@ require('dotenv').config()
 module.exports = (client, message) => {
   
   try {
-    const channel = client.channels.cache.get('1174800695610855445')
+    const channel = client.channels.cache.get('CHANNEL_ID')
     if (!channel) return
     
     channel.send({

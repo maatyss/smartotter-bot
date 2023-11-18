@@ -34,13 +34,18 @@ ___
    - `GUILD_ID` : Your server id,
    - `CLIENT_ID` : The bot discord id,
    - `BOXYDEV_TOKEN` is only usefull if you plan on using the `/deploy` command;
-5. run `npm install`.
-6. Install `node` and `pm2` on your server.
-7. Run `pm2 start pm2.config.js`;
+5. Update the `config.json` file :
+    - `SERVER_ID` : Your server ID,
+    - `DEV_ID` : An array off all developper IDs on your serv (you need it to run certain commands);
+6. Update the `sendMessage.js` file :
+    - `CHANNEL_ID` : The channel ID were you want to have some logs;
+7. run `npm install`.
+8. Install `node` and `pm2` on your server.
+9. Run `pm2 start pm2.config.js`;
     - You can chnage the `apps.name` to your fit.
     - You can run `pm2 startup` to be sure the node server will be up everytime your machine reboot.
     - run `pm2 save --force` to save the changes.
-8. Now you ready to use the bot on your Discord Server ! Have Fun !
+10. Now you ready to use the bot on your Discord Server ! Have Fun !
 
 
 
