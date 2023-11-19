@@ -64,6 +64,8 @@ module.exports = {
                 },
               }).then(response => {
                 interaction.editReply(`🛰 **${siteToDeploy}** déployé ! \n🆔 : *${site.id}* \n🌍 : https://${siteToDeploy}`)
+                sendMessage(client, `🛰 **${siteToDeploy}** déployé ! \n🆔 : *${site.id}* \n🌍 : https://${siteToDeploy} \n🤖 By : <@${interaction.user.id}>`)
+                
               })
             } else if (sites.includes(siteToDeploy)) {
               interaction.editReply(`🪂 **${siteToDeploy}** n'a pas de match`)

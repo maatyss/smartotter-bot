@@ -1,4 +1,5 @@
 const {ApplicationCommandOptionType, PermissionFlagsBits} = require('discord.js')
+const sendMessage = require('../../Log/sendMessage')
 
 module.exports = {
   
@@ -38,10 +39,12 @@ module.exports = {
           })
         })
         await interaction.editReply(`🗑 ${messageNbrToDelete} messages supprimés`)
+        await sendMessage(client, `${messageNbrToDelete} message(s) supprimé(s) \n #️⃣ : <#${interaction.channelId}> \n🤖 By : <@${interaction.user.id}>`)
         
       } else {
         await interaction.channel.bulkDelete(messageNbrToDelete)
         await interaction.editReply(`🗑 ${messageNbrToDelete} messages supprimés`)
+        await sendMessage(client, `${messageNbrToDelete} message(s) supprimé(s) \n #️⃣ : <#${interaction.channelId}> \n🤖 By : <@${interaction.user.id}>`)
       }
       
     })
