@@ -17,11 +17,11 @@ module.exports = {
   botPermissions: [PermissionFlagsBits.Administrator],
   
   callback: async (client, interaction) => {
-    const activity = interaction.options.getString('setactivity')
+    const activity = interaction.options.getString('activity')
     await interaction.deferReply({ephemeral: true})
     client.user.setActivity(activity)
-    await interaction.editReply(`Changed activity to : ${activity}`)
-    await sendMessage(client, `Changed activity to : ${activity}`)
+    await interaction.editReply(`🎮 Activity set to : ${activity}`)
+    await sendMessage(client, `🎮 Activity set to : ${activity} \n🤖 By : <@${interaction.user.id}>`)
   },
   
 }
