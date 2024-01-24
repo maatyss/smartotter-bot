@@ -5,12 +5,14 @@ const client = new Client({
                           })
 const eventHandler = require('./Handlers/eventHandler')
 const sendMessage = require('./Log/sendMessage')
+const registerCommands = require('Events/ready/01registerCommands')
 
 eventHandler(client)
 client.on('ready', (c) => {
   const activity = 'Self-Coding'
   client.user.setActivity(activity)
   sendMessage(client,`Changed Activity for : ${activity}`)
+  registerCommands(client)
 })
 
 client.login(process.env.TOKEN)
