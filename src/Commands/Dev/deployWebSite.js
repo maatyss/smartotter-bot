@@ -31,13 +31,21 @@ module.exports = {
     
     const url = 'https://cloud.boxydev.com/api/server'
     
+    if (!interaction.options.get('id') && !interaction.options.get('site')) {
+      await interaction.editReply(`⚠ Merci de donner soit l'**URL** soit l'**ID** du site à deployer !`)
+      return
+    }
+    
     if (interaction.options.get('id')) {
       const siteID = interaction.options.get('id').value
       await axios.post(`https://cloud.boxydev.com/api/site/${siteID}/deployment`, {
         headers: {
           Authorization: `Bearer ${process.env.BOXYDEV_TOKEN}`,
         },
-      }).then(interaction.editReply(`🛰 **${siteToDeploy}** déployé ! \n🆔 : *${siteID}* \n🌍 : https://${siteToDeploy}`)).catch(error => {
+      }).then(() => {
+        interaction.editReply(`🛰 **${siteToDeploy}** déployé ! \n🆔 : *${siteID}* \n🌍 : https://${siteToDeploy}`)
+        sendMessage(client, `🛰 **${siteToDeploy}** déployé ! \n🆔 : *${siteID}* \n🌍 : https://${siteToDeploy} \n🤖 By : <@${interaction.user.id}>`)
+      }).catch(error => {
         console.log(error)
         sendMessage(client, error)
       })
