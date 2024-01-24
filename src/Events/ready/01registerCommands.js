@@ -46,4 +46,5 @@ module.exports = async (client) => {
     console.log(error)
     sendMessage(client, error)
   }
+  console.log('All Commands registered !')
 }
