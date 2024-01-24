@@ -9,7 +9,7 @@ module.exports = {
   options: [{
     name: 'site',
     description: 'Domaine du site à déployer (doit être racordé à Cloud Boxydev)',
-    required: true,
+    required: false,
     type: ApplicationCommandOptionType.String,
   }, {
     name: 'id',
